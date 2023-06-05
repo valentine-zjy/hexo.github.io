@@ -1,0 +1,595 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+<meta name="msvalidate.01" content="9EBC90696DDD6D995901F1695D5C0A38" />
+<meta name="baidu-site-verification" content="codeva-kMcy1s0JgQ" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Valentine" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Valentine" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Valentine" href="http://example.com/feed.json" />
+<meta name="Keywords" Content="">
+<meta name="Description" Content="">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://example.com/2023/06/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/">
+
+
+
+  <title>Valentine</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">3、数据链路层
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2023-06-05 12:26:35">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-06-05T12:26:35+08:00">2023-06-05</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Hello World</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipexe4oykj20zk0m87ji.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></li>
+        </ul>
+      </div>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    </header>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="item" rel="index" title="In 计算机网络"><span itemprop="name">计算机网络</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/">
+
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=26716296&s=4">
+  <meta itemprop="name" content="Valentine">
+  <meta itemprop="description" content=", ">
+</span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Valentine">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p align="center">3、数据链路层</p>
+
+<h1 id="一、数据链路层基础概论"><a href="#一、数据链路层基础概论" class="headerlink" title="一、数据链路层基础概论"></a>一、数据链路层基础概论</h1><h2 id="1、数据链路层概念"><a href="#1、数据链路层概念" class="headerlink" title="1、数据链路层概念"></a>1、数据链路层概念</h2><p>数据链路层是计算机网络体系结构中的<strong>第二层</strong>，它负责将物理层提供的原始比特流转换成具有一定意义的数据帧，并通过物理介质将数据帧传输到相邻节点。</p>
+<p>数据链路层的主要功能包括<strong>帧封装、透明传输、差错检测和流量控制</strong>等。它还负责管理<strong>物理层与网络层之间的数据传输</strong>，通过提供可靠的数据传输服务来保证网络通信的可靠性和高效性。常见的数据<strong>链路层协议有以太网、PPP、HDLC</strong>等。</p>
+<h2 id="2、帧的概念"><a href="#2、帧的概念" class="headerlink" title="2、帧的概念"></a>2、帧的概念</h2><p>帧是数据链路层的基本传输单位，它是数据链路层封装数据的基本格式。</p>
+<p>帧由首部、数据和尾部三部分组成：</p>
+<blockquote>
+<ol>
+<li>首部（帧头）：<em>起始标志、源MAC地址、目的MAC地址、类型</em>。它的作用是用于帧的定界和识别。不同数据链路层协议的帧头格式可能不同，但通常都包含了一些控制信息和地址信息，以便接收方能够正确地识别和处理帧。</li>
+<li>数据</li>
+<li>尾部（帧尾）：<em>结束标志、差错检测码</em>。它的作用是用于帧的校验和纠错。帧尾的长度通常比帧头短，它通常包含了一些控制信息和校验码，以便接收方能够检测和纠正传输过程中可能出现的错误。</li>
+</ol>
+</blockquote>
+<p>之所以数据链路层能够提供提供相邻结点的可靠数据传输，正是因为帧头帧尾的有效校验和控制，确保帧的可靠传输和正确处理。</p>
+<h2 id="3、以太网数据帧中的MAC和LLC"><a href="#3、以太网数据帧中的MAC和LLC" class="headerlink" title="3、以太网数据帧中的MAC和LLC"></a>3、以太网数据帧中的MAC和LLC</h2><table>
+<thead>
+<tr>
+<th align="center">….</th>
+<th align="center">…</th>
+<th align="center">…</th>
+<th align="center">…</th>
+<th align="center">…</th>
+<th align="center">…</th>
+<th align="center">…</th>
+<th align="center">…</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Ethernet_ll</td>
+<td align="center">D.MAC</td>
+<td align="center">S.MAC</td>
+<td align="center">Type</td>
+<td align="center">Data</td>
+<td align="center">FCS</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">IEEE802.3</td>
+<td align="center">D.MAC</td>
+<td align="center">S.MAC</td>
+<td align="center">Length</td>
+<td align="center">LLC</td>
+<td align="center">SNAP</td>
+<td align="center">Data</td>
+<td align="center">FCS</td>
+</tr>
+</tbody></table>
+<p>数据链路层向下还能够细分，主要分为 <strong>The logical link control</strong> (LLC) 层和 T<strong>he medium access control</strong> (MAC) 层。</p>
+<p>MAC子层负责控制物理介质的访问，而LLC子层负责提供一个可靠的数据传输服务。</p>
+<h3 id="MAC"><a href="#MAC" class="headerlink" title="MAC"></a>MAC</h3><p>MAC地址是数据帧中的一个重要部分，用于标识网络中的每个设备。它是一个48位的地址，通常表示为十六进制数字对（是独一无二的）。</p>
+<p>作用：数据帧的封装&#x2F;卸装，帧的寻址和识别，帧的接收与发送，链路的管理，帧的差错控制等。MAC子层的存在屏蔽了不同物理链路种类的差异性。</p>
+<h3 id="LLC"><a href="#LLC" class="headerlink" title="LLC"></a>LLC</h3><p>LLC是OSI模型中数据链路层的上层，位于MAC子层之上。LLC子层为网络层提供了一个可靠的数据传输服务，它负责将网络层的数据分成适当的数据块，并将这些数据块打包成帧进行传输。</p>
+<p>作用：LLC子层的主要功能为传输可靠性保障和控制，数据包的分段与重组，数据包的顺序传输。</p>
+<h2 id="4、数据链路层的两种传输方式"><a href="#4、数据链路层的两种传输方式" class="headerlink" title="4、数据链路层的两种传输方式"></a>4、数据链路层的两种传输方式</h2><p>单播和广播</p>
+<h2 id="5、数据链路层的三个基本问题"><a href="#5、数据链路层的三个基本问题" class="headerlink" title="5、数据链路层的三个基本问题"></a>5、数据链路层的三个基本问题</h2><h3 id="封装成帧"><a href="#封装成帧" class="headerlink" title="- 封装成帧"></a>- 封装成帧</h3><p>封装成帧就是在一段数据的前后分别添加首部和尾部，这样就构成了一个帧，接收端在收到物理层上交的比特流后，就能根据首部和尾部的标记，从收到的比特流中识别帧的开始和结束。</p>
+<h3 id="透明传输"><a href="#透明传输" class="headerlink" title="-透明传输"></a>-透明传输</h3><p>透明传输是指不管所传数据是什么样的比特组合，都应当能够在链路上传送。</p>
+<h3 id="差错检测"><a href="#差错检测" class="headerlink" title="-差错检测"></a>-差错检测</h3><p>收到正确的帧就要向发送端发送确认，发送端在一定的期限内若没有收到对方的确认，就认为出现了差错，因而就进行重传，直到收到对方的确认为止。</p>
+<h2 id="6、局域网中的设备"><a href="#6、局域网中的设备" class="headerlink" title="6、局域网中的设备"></a>6、局域网中的设备</h2><blockquote>
+<ol>
+<li>集线器：<ul>
+<li>集线器是一个简单的网络设备，它的主要功能是将多个计算机连接在一起形成一个局域网。集线器的工作原理是将数据包从<strong>一个端口</strong>转发到其他<strong>所有端口</strong>，这意味着当一个计算机发送数据包时，所有连接到集线器的计算机都会收到这个数据包。因此，集线器的缺点是它<em>不能提供任何形式的数据包过滤或分段，这可能会导致网络拥塞和安全问题。</em></li>
+<li>英文名称：Hub</li>
+</ul>
+</li>
+<li>交换机：<ul>
+<li>交换机是一种更高级的网络设备，它可以在不同的网络设备之间建立虚拟连接，以便在这些设备之间传输数据。交换机可以学习每个设备的MAC地址，并根据这些地址将数据包转发到正确的端口。这使得交换机可以提供更高的网络性能和更好的安全性，因为它只会<em>将数据包发送到目标设备，而不是广播到所有设备。</em></li>
+<li>英文名称：Switch</li>
+</ul>
+</li>
+<li>网桥：<ul>
+<li>网桥是一种连接两个局域网的网络设备，它可以将<strong>两个局域网</strong>连接在一起形成一个更大的局域网。网桥的工作原理类似于交换机，但<strong>它只能连接两个网络</strong>。网桥可以学习每个设备的MAC地址，并根据这些地址将数据包转发到正确的网络。这使得网桥可以提供更高的网络性能和更好的安全性，因为它只会<em>将数据包发送到目标网络，而不是广播到所有网络。</em></li>
+<li>英文名称：Bridge</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h1 id="二、数据链路层的通信协议"><a href="#二、数据链路层的通信协议" class="headerlink" title="二、数据链路层的通信协议"></a>二、数据链路层的通信协议</h1><h2 id="1、冲突域和广播域"><a href="#1、冲突域和广播域" class="headerlink" title="1、冲突域和广播域"></a>1、冲突域和广播域</h2><h3 id="冲突域"><a href="#冲突域" class="headerlink" title="冲突域"></a>冲突域</h3><p>现在的设备都差不多做到了隔离冲突域，冲突域也就就逐渐消失了</p>
+<p>交换机的每一个端口都是一个冲突域，冲突域只能发生在一个网段</p>
+<p>分层：基于OSI的第一层物理层</p>
+<h3 id="广播域"><a href="#广播域" class="headerlink" title="广播域"></a>广播域</h3><p>交换机的所有端口都在一个广播域；广播域在一个或多个网段内发生。</p>
+<p>分层：基于OSI的第二层数据链路层</p>
+<p>![[Pasted image 20230605084845.png]]</p>
+<h3 id="两者的区别"><a href="#两者的区别" class="headerlink" title="两者的区别"></a>两者的区别</h3><blockquote>
+<p>1、广播域可以跨网段<br>2、在冲突域中所有的数据传输都是以广播形式；在广播域中，只有广播帧才会被所有主机接收。<br>3、冲突域是基于第一层（物理层），而广播域是机于第二层（数据链路层） 。<br>4、HUB 所有端口都在同一个广播域，冲突域内。Swith所有端口都在同一个广播域内，而每一个端口就是一个冲突域。</p>
+</blockquote>
+<h2 id="2、虚拟局域网（实验）"><a href="#2、虚拟局域网（实验）" class="headerlink" title="2、虚拟局域网（实验）"></a>2、虚拟局域网（实验）</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>VLAN（Virtual Local Area Network）即虚拟局域网，是将一个物理的LAN在逻辑上划分成多个广播域的通信技术。VLAN内的主机间可以直接通信，而VLAN间不能直接通信，从而将广播报文限制在一个VLAN内。</p>
+<h3 id="（1）虚拟局域网的优点和目的"><a href="#（1）虚拟局域网的优点和目的" class="headerlink" title="（1）虚拟局域网的优点和目的"></a>（1）虚拟局域网的优点和目的</h3><blockquote>
+<ol>
+<li>划分广播域</li>
+<li>增强局域网的安全性</li>
+<li>提高健壮性</li>
+<li>灵活构建工作组</li>
+</ol>
+</blockquote>
+<h3 id="（2）划分VLAN的方式"><a href="#（2）划分VLAN的方式" class="headerlink" title="（2）划分VLAN的方式"></a>（2）划分VLAN的方式</h3><table>
+<thead>
+<tr>
+<th align="left">方法名称</th>
+<th align="center">具体方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">基于端口</td>
+<td align="center">给交换机的每个接口配置不同的PVID，当一个数据帧进入交换机接口时，如果没有带VLAN标签，且该接口上配置了PVID，那么，该数据帧就会被打上接口的PVID。如果进入的帧已经带有VLAN标签，那么交换机不会再增加VLAN标签，即使接口已经配置了PVID。</td>
+</tr>
+<tr>
+<td align="left">基于子网</td>
+<td align="center">配置好子网与VLAN映射表，如果交换设备收到的是untagged（不带VLAN标签）帧，交换设备根据报文中的源IP地址信息，确定添加的VLAN ID。将指定网段或IP地址发出的报文在指定的VLAN中传输，减轻了网络管理者的任务量，且有利于管理。</td>
+</tr>
+<tr>
+<td align="left">基于MAC地址</td>
+<td align="center">先配置好MAC地址和VLAN ID映射关系表，当终端用户的物理位置发生改变，不需要重新配置VLAN。提高了终端用户的安全性和接入的灵活性。</td>
+</tr>
+<tr>
+<td align="left">基于协议</td>
+<td align="center">将网络中提供的服务类型与VLAN相绑定，方便管理和维护。需要对网络中所有的协议类型和VLAN ID的映射关系表进行初始配置。需要分析各种协议的地址格式并进行相应的转换，消耗交换机较多的资源，速度上稍具劣势。</td>
+</tr>
+<tr>
+<td align="left">基于匹配策略</td>
+<td align="center">先在交换机上配置好终端的MAC地址和IP地址，并与VLAN关联。只有符合条件的终端才能加入指定VLAN。符合策略的终端加入指定VLAN后，严禁修改IP地址或MAC地址，否则会导致终端从指定VLAN中退出。</td>
+</tr>
+</tbody></table>
+<p>基于端口的方法分类：</p>
+<ul>
+<li>Access：只允许通过一个VLAN</li>
+<li>Trunk：允许通过多个VLAN</li>
+<li>hybird：华为的二层接口特殊形式</li>
+</ul>
+<h3 id="（3）CSMA-x2F-CD"><a href="#（3）CSMA-x2F-CD" class="headerlink" title="（3）CSMA&#x2F;CD"></a>（3）CSMA&#x2F;CD</h3><p>CSMA&#x2F;CD（Carrier Sense Multiple Access with Collision Detection）是一种用于以太网的介质访问控制协议。它用于协调多个设备共享同一物理介质（如同一局域网）进行数据传输的过程。CSMA&#x2F;CD确保在发送数据之前检测到冲突，并在发生冲突时采取适当的措施。</p>
+<p>CSMA&#x2F;CD协议的四大要点如下：</p>
+<blockquote>
+<ol>
+<li>先听再发</li>
+<li>边听边发</li>
+<li>冲突停止</li>
+<li>延迟后发</li>
+</ol>
+</blockquote>
+<p>通过这些机制，CSMA&#x2F;CD协议可以有效地协调多个设备在同一物理介质上进行数据传输，减少冲突的发生，并确保数据的可靠传输。<em>然而，随着以太网技术的发展，CSMA&#x2F;CD已经逐渐被更先进的协议（如以太网交换机使用的CSMA&#x2F;CA）所取代，因为后者能够更好地应对网络中的冲突和碰撞问题。</em></p>
+<h3 id="（4）PPP"><a href="#（4）PPP" class="headerlink" title="（4）PPP"></a>（4）PPP</h3><p>PPP（Point-to-Point Protocol）是一种用于在计算机网络中建立点对点连接的协议。它提供了一种可靠的、经过认证的数据链路层协议，常用于通过串行线路（如电话线或光纤）连接两个网络节点。</p>
+<p><strong>点对点通信是一对一信道，因此不会发生碰撞，因此比较简单，采用PPP协议；其中PPP协议就是用户计算机和ISP(互联网服务提供商)进行通信时使用的数据链路层的协议</strong></p>
+<p>PPP 最初设计是为两个对等节点之间的 IP 流量传输提供一种封装协议。</p>
+<h3 id="（5）CRC"><a href="#（5）CRC" class="headerlink" title="（5）CRC"></a>（5）CRC</h3><p>CRC（Cyclic Redundancy Check）是一种 <em><strong>错误检测技术</strong></em>，常用于数据传输过程中对数据的完整性进行验证。CRC是一种循环冗余校验，它基于多项式除法来生成和检测校验码。</p>
+<blockquote>
+<h2 id="CRC的工作原理如下："><a href="#CRC的工作原理如下：" class="headerlink" title="CRC的工作原理如下："></a>CRC的工作原理如下：</h2><ol>
+<li>选择生成多项式</li>
+<li>数据帧扩展</li>
+<li>生成校验码</li>
+<li>发送数据帧</li>
+<li>接收端校验</li>
+</ol>
+</blockquote>
+<p>CRC能够检测到多种类型的错误，包括单比特错误、双比特错误以及大部分的突发错误。<strong>然而，CRC只能检测错误，不能进行纠正。如果检测到错误，通常的做法是重新发送数据帧以确保数据的完整性。</strong><br>CRC广泛应用于各种数据通信领域，如<strong>以太网、串行通信、存储介质</strong>等。它是一种快速、简单和有效的错误检测技术，能够提高数据传输的可靠性。</p>
+<p><strong>关注：CRC冗余校验计算题</strong></p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2023-06-05 12:28:10" itemprop="dateModified" datetime="2023-06-05T12:28:10+08:00">2023-06-05</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Valentine <i class="ic i-at"><em>@</em></i>Valentine
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://example.com/2023/06/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" title="3、数据链路层">http://example.com/2023/06/05/计算机网络/3、数据链路层/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/06/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/2%E3%80%81%E7%89%A9%E7%90%86%E5%B1%82/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;image.baidu.com&#x2F;search&#x2F;down?url&#x3D;https:&#x2F;&#x2F;lz.sinaimg.cn&#x2F;large&#x2F;6833939bly1giclimtf7dj20zk0m8qav.jpg" title="2、物理层">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 计算机网络</span>
+  <h3>2、物理层</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E5%9F%BA%E7%A1%80%E6%A6%82%E8%AE%BA"><span class="toc-number">1.</span> <span class="toc-text">一、数据链路层基础概论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">1、数据链路层概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%B8%A7%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.</span> <span class="toc-text">2、帧的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E4%BB%A5%E5%A4%AA%E7%BD%91%E6%95%B0%E6%8D%AE%E5%B8%A7%E4%B8%AD%E7%9A%84MAC%E5%92%8CLLC"><span class="toc-number">1.3.</span> <span class="toc-text">3、以太网数据帧中的MAC和LLC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MAC"><span class="toc-number">1.3.1.</span> <span class="toc-text">MAC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LLC"><span class="toc-number">1.3.2.</span> <span class="toc-text">LLC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E7%9A%84%E4%B8%A4%E7%A7%8D%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F"><span class="toc-number">1.4.</span> <span class="toc-text">4、数据链路层的两种传输方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E7%9A%84%E4%B8%89%E4%B8%AA%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">5、数据链路层的三个基本问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7"><span class="toc-number">1.5.1.</span> <span class="toc-text">- 封装成帧</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93"><span class="toc-number">1.5.2.</span> <span class="toc-text">-透明传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B"><span class="toc-number">1.5.3.</span> <span class="toc-text">-差错检测</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%AD%E7%9A%84%E8%AE%BE%E5%A4%87"><span class="toc-number">1.6.</span> <span class="toc-text">6、局域网中的设备</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E7%9A%84%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE"><span class="toc-number">2.</span> <span class="toc-text">二、数据链路层的通信协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E5%86%B2%E7%AA%81%E5%9F%9F%E5%92%8C%E5%B9%BF%E6%92%AD%E5%9F%9F"><span class="toc-number">2.1.</span> <span class="toc-text">1、冲突域和广播域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E5%9F%9F"><span class="toc-number">2.1.1.</span> <span class="toc-text">冲突域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E6%92%AD%E5%9F%9F"><span class="toc-number">2.1.2.</span> <span class="toc-text">广播域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E8%80%85%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.1.3.</span> <span class="toc-text">两者的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%EF%BC%88%E5%AE%9E%E9%AA%8C%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">2、虚拟局域网（实验）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91%E7%9A%84%E4%BC%98%E7%82%B9%E5%92%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">2.2.2.</span> <span class="toc-text">（1）虚拟局域网的优点和目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E5%88%92%E5%88%86VLAN%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">2.2.3.</span> <span class="toc-text">（2）划分VLAN的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89CSMA-x2F-CD"><span class="toc-number">2.2.4.</span> <span class="toc-text">（3）CSMA&#x2F;CD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%884%EF%BC%89PPP"><span class="toc-number">2.2.5.</span> <span class="toc-text">（4）PPP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%885%EF%BC%89CRC"><span class="toc-number">2.2.6.</span> <span class="toc-text">（5）CRC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CRC%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="toc-number">2.3.</span> <span class="toc-text">CRC的工作原理如下：</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2023/06/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/1%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/" rel="bookmark" title="1、计算机网络概念与体系结构">1、计算机网络概念与体系结构</a></li><li><a href="/2023/06/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/2%E3%80%81%E7%89%A9%E7%90%86%E5%B1%82/" rel="bookmark" title="2、物理层">2、物理层</a></li><li class="active"><a href="/2023/06/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" rel="bookmark" title="3、数据链路层">3、数据链路层</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Valentine"
+      data-src="http://q1.qlogo.cn/g?b=qq&nk=26716296&s=4"
+  >
+  <p class="name" itemprop="name">Valentine</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">3</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">1</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tLzI2NzE2Mjk2" title="https:&#x2F;&#x2F;github.com&#x2F;26716296"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTIwNTc4MjIxNjk=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;2057822169"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOjI2NzE2Mjk2QHFxLmNvbQ==" title="mailto:26716296@qq.com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item qq" data-url="aHR0cHM6Ly9xbS5xcS5jb20vY2dpLWJpbi9xbS9xcj9rPTRGQVJ0ZzhfQmJXeHNKSUhxUlZGVWtpT2lfbVprS0VTJm5vdmVyaWZ5PTAmcGVyc29uYWxfcXJjb2RlX3NvdXJjZT0z" title="https:&#x2F;&#x2F;qm.qq.com&#x2F;cgi-bin&#x2F;qm&#x2F;qr?k&#x3D;4FARtg8_BbWxsJIHqRVFUkiOi_mZkKES&amp;noverify&#x3D;0&amp;personal_qrcode_source&#x3D;3"><i class="ic i-qq"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-link"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2023/06/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/2%E3%80%81%E7%89%A9%E7%90%86%E5%B1%82/" title="2、物理层">2、物理层</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2023/06/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" title="3、数据链路层">3、数据链路层</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2023/06/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/1%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/" title="1、计算机网络概念与体系结构">1、计算机网络概念与体系结构</a></span>
+  </li>
+
+  </ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Valentine @ Hello World</span>
+  </div>
+<div class="timing">
+  <span id="RunTime"></span>
+  <script>
+    var BootDate = new Date("2021/10/24 23:00:00"); 
+    function ShowRunTime(id) {
+      var NowDate = new Date();
+      var RunDateM = parseInt(NowDate - BootDate);
+      var RunDays = Math.floor(RunDateM/(24*3600*1000));
+      var RunHours = Math.floor(RunDateM%(24*3600*1000)/(3600*1000));
+      var RunMinutes = Math.floor(RunDateM%(24*3600*1000)%(3600*1000)/(60*1000));
+      var RunSeconds = Math.round(RunDateM%(24*3600*1000)%(3600*1000)%(60*1000)/1000);
+      var RunTime = RunDays + " 天 " + RunHours + " 时 " + RunMinutes + " 分 " + RunSeconds + " 秒";
+      document.getElementById(id).innerHTML = "本站已运行 " + RunTime;
+    }
+    setInterval("ShowRunTime('RunTime')", 1000);
+  </script>
+</div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/06/05/计算机网络/3、数据链路层/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
