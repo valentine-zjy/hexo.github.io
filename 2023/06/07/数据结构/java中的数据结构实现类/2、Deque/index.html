@@ -1,0 +1,726 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+<meta name="msvalidate.01" content="9EBC90696DDD6D995901F1695D5C0A38" />
+<meta name="baidu-site-verification" content="codeva-kMcy1s0JgQ" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Valentine" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Valentine" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Valentine" href="http://example.com/feed.json" />
+<meta name="Keywords" Content="">
+<meta name="Description" Content="">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://example.com/2023/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/2%E3%80%81Deque/">
+
+
+
+  <title>Valentine</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">2、Deque
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2023-06-07 10:00:16">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-06-07T10:00:16+08:00">2023-06-07</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Hello World</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipeybxm1pj20zk0m8niv.jpg"></li>
+        </ul>
+      </div>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    </header>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="item" rel="index" title="In 数据结构"><span itemprop="name">数据结构</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/" itemprop="item" rel="index" title="In java中的数据结构实现类"><span itemprop="name">java中的数据结构实现类</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/2%E3%80%81Deque/">
+
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="http://q1.qlogo.cn/g?b=qq&nk=26716296&s=4">
+  <meta itemprop="name" content="Valentine">
+  <meta itemprop="description" content=", ">
+</span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Valentine">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p align="center">2、Deque</p>
+
+<h1 id="Deque（双端队列）"><a href="#Deque（双端队列）" class="headerlink" title="Deque（双端队列）"></a>Deque（双端队列）</h1><p><code>Deque</code>（Double Ended Queue，双端队列）是Java集合框架中的接口，代表一个可以在两端进行插入和删除操作的队列。<code>Deque</code>接口扩展了<code>Queue</code>接口，并提供了在队列的两端进行元素操作的能力。</p>
+<h2 id="实现类"><a href="#实现类" class="headerlink" title="实现类"></a>实现类</h2><p>Java中提供了多个实现<code>Deque</code>接口的类，常见的有以下几个：</p>
+<ol>
+<li><p><code>ArrayDeque</code>: 基于可调整大小的数组实现的双端队列。它提供了高效的插入和删除操作，并且没有容量限制。由于其基于数组的实现方式，可以快速随机访问元素。<code>ArrayDeque</code>不是线程安全的，不支持同步访问。</p>
+</li>
+<li><p><code>LinkedList</code>: 基于双向链表实现的双端队列。它提供了高效的插入和删除操作，但访问操作的性能相对较慢。<code>LinkedList</code>可以用作双端队列、栈或队列的实现。它不是线程安全的，不支持同步访问。</p>
+</li>
+</ol>
+<h2 id="ArrayDeque"><a href="#ArrayDeque" class="headerlink" title="ArrayDeque"></a>ArrayDeque</h2><p>ArrayDeque类是 双端队列的线性实现类。</p>
+<p>具有以下特征：</p>
+<p>☞ ArrayDeque是采用数组方式实现的双端队列。<br>☞ ArrayDeque的出队入队是通过头尾指针循环，利用数组实现的。<br>☞ ArrayDeque容量不足时是会扩容的，每次扩容容量增加一倍。<br>☞ ArrayDeque可以直接作为栈使用。当用作栈时，性能优于Stack，当用于队列时，性能优于LinkedList。<br>☞ 无容量大小限制，容量按需增长。<br>☞ 非线程安全队列，无同步策略，不支持多线程安全访问。<br>☞ 具有fail-fast特性，不能存储null值，支持双向迭代器遍历。</p>
+<h2 id="用ArrayDeque-还是用-LinkedList？"><a href="#用ArrayDeque-还是用-LinkedList？" class="headerlink" title="用ArrayDeque 还是用 LinkedList？"></a>用ArrayDeque 还是用 LinkedList？</h2><p>参考文章：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpbnlzdWNjZXNzL2FydGljbGUvZGV0YWlscy8xMDkwMzg0NTM/b3BzX3JlcXVlc3RfbWlzYz0mcmVxdWVzdF9pZD0mYml6X2lkPTEwMiZ1dG1fdGVybT1BcnJheURlcXVlJnV0bV9tZWRpdW09ZGlzdHJpYnV0ZS5wY19zZWFyY2hfcmVzdWx0Lm5vbmUtdGFzay1ibG9nLTJ+YWxsfnNvYmFpZHV3ZWJ+ZGVmYXVsdC0zLTEwOTAzODQ1My4xNDIlNUV2ODglNUVjb250cm9sXzIsMjM5JTVFdjIlNUVpbnNlcnRfY2hhdGdwdCZzcG09MTAxOC4yMjI2LjMwMDEuNDE4Nw==">Java中的栈Stack、Deque、ArrayDeque、LinkedList_deque</span></p>
+<p><strong>简单来说，用ArrayDeque就完了</strong></p>
+<h1 id="Deque方法"><a href="#Deque方法" class="headerlink" title="Deque方法"></a>Deque方法</h1><h4 id="添加元素"><a href="#添加元素" class="headerlink" title="添加元素"></a>添加元素</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用法</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>void addFirst(E e)</code></td>
+<td><code>deque.addFirst(element);</code></td>
+<td>在双端队列的开头添加指定元素。</td>
+<td><code>deque.addFirst(1);</code></td>
+</tr>
+<tr>
+<td><code>void addLast(E e)</code></td>
+<td><code>deque.addLast(element);</code></td>
+<td>在双端队列的末尾添加指定元素。</td>
+<td><code>deque.addLast(2);</code></td>
+</tr>
+<tr>
+<td><code>boolean offerFirst(E e)</code></td>
+<td><code>deque.offerFirst(element);</code></td>
+<td>在双端队列的开头添加指定元素，并返回是否成功。</td>
+<td><code>boolean success = deque.offerFirst(3);</code></td>
+</tr>
+<tr>
+<td><code>boolean offerLast(E e)</code></td>
+<td><code>deque.offerLast(element);</code></td>
+<td>在双端队列的末尾添加指定元素，并返回是否成功。</td>
+<td><code>boolean success = deque.offerLast(4);</code></td>
+</tr>
+</tbody></table>
+<h4 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用法</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>E getFirst()</code></td>
+<td><code>E first = deque.getFirst();</code></td>
+<td>获取双端队列的开头元素，但不进行删除。</td>
+<td><code>E first = deque.getFirst();</code></td>
+</tr>
+<tr>
+<td><code>E getLast()</code></td>
+<td><code>E last = deque.getLast();</code></td>
+<td>获取双端队列的末尾元素，但不进行删除。</td>
+<td><code>E last = deque.getLast();</code></td>
+</tr>
+<tr>
+<td><code>E peekFirst()</code></td>
+<td><code>E first = deque.peekFirst();</code></td>
+<td>获取双端队列的开头元素，如果队列为空则返回<code>null</code>。</td>
+<td><code>E first = deque.peekFirst();</code></td>
+</tr>
+<tr>
+<td><code>E peekLast()</code></td>
+<td><code>E last = deque.peekLast();</code></td>
+<td>获取双端队列的末尾元素，如果队列为空则返回<code>null</code>。</td>
+<td><code>E last = deque.peekLast();</code></td>
+</tr>
+</tbody></table>
+<h4 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用法</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>E removeFirst()</code></td>
+<td><code>E first = deque.removeFirst();</code></td>
+<td>删除并返回双端队列的开头元素。如果队列为空则抛出异常。</td>
+<td><code>E first = deque.removeFirst();</code></td>
+</tr>
+<tr>
+<td><code>E removeLast()</code></td>
+<td><code>E last = deque.removeLast();</code></td>
+<td>删除并返回双端队列的末尾元素。如果队列为空则抛出异常。</td>
+<td><code>E last = deque.removeLast();</code></td>
+</tr>
+<tr>
+<td><code>E pollFirst()</code></td>
+<td><code>E first = deque.pollFirst();</code></td>
+<td>删除并返回双端队列的开头元素。如果队列为空则返回<code>null</code>。</td>
+<td><code>E first = deque.pollFirst();</code></td>
+</tr>
+<tr>
+<td><code>E pollLast()</code></td>
+<td><code>E last = deque.pollLast();</code></td>
+<td>删除并返回双端队列的末尾元素。如果队列为空则返回<code>null</code>。</td>
+<td><code>E last = deque.pollLast();</code></td>
+</tr>
+</tbody></table>
+<h4 id="队列操作"><a href="#队列操作" class="headerlink" title="队列操作"></a>队列操作</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用法</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>public boolean add(E e)</code></td>
+<td><code>deque.add(element);</code></td>
+<td>将指定元素添加到双端队列的末尾。</td>
+<td><code>deque.add(1);</code></td>
+</tr>
+<tr>
+<td><code>public boolean offer(E e)</code></td>
+<td><code>deque.offer(element);</code></td>
+<td>将指定元素添加到双端队列的末尾，并返回是否成功。</td>
+<td><code>boolean success = deque.offer(2);</code></td>
+</tr>
+<tr>
+<td><code>public E remove()</code></td>
+<td><code>E element = deque.remove();</code></td>
+<td>删除并返回双端队列的开头元素。如果队列为空则抛出异常。</td>
+<td><code>E element = deque.remove();</code></td>
+</tr>
+<tr>
+<td><code>public E poll()</code></td>
+<td><code>E element = deque.poll();</code></td>
+<td>删除并返回双端队列的开头元素。如果队列为空则返回<code>null</code>。</td>
+<td><code>E element = deque.poll();</code></td>
+</tr>
+<tr>
+<td><code>public E pollFirst()</code></td>
+<td><code>E element = deque.pollFirst();</code></td>
+<td>删除并返回双端队列的开头元素。如果队列为空则返回<code>null</code>。</td>
+<td><code>E element = deque.pollFirst();</code></td>
+</tr>
+<tr>
+<td><code>public E element()</code></td>
+<td><code>E element = deque.element();</code></td>
+<td>获取双端队列的开头元素，但不进行删除。如果队列为空则抛出异常。</td>
+<td><code>E element = deque.element();</code></td>
+</tr>
+<tr>
+<td><code>public E peek()</code></td>
+<td><code>E element = deque.peek();</code></td>
+<td>获取双端队列的开头元素，如果队列为空则返回<code>null</code>。</td>
+<td><code>E element = deque.peek();</code></td>
+</tr>
+</tbody></table>
+<h4 id="栈操作"><a href="#栈操作" class="headerlink" title="栈操作"></a>栈操作</h4><p>下面是使用表格形式写出方法名称、用法、作用和示例的详细信息：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用法</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>public void push(E e)</code></td>
+<td><code>stack.push(element);</code></td>
+<td>将指定元素压入栈顶。</td>
+<td><code>stack.push(1);</code></td>
+</tr>
+<tr>
+<td><code>public E pop()</code></td>
+<td><code>E element = stack.pop();</code></td>
+<td>弹出并返回栈顶元素。如果栈为空则抛出异常。</td>
+<td><code>E element = stack.pop();</code></td>
+</tr>
+</tbody></table>
+<h4 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h4><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用法</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>boolean contains(Object o)</code></td>
+<td><code>deque.contains(element);</code></td>
+<td>检查双端队列是否包含指定元素。</td>
+<td><code>boolean contains = deque.contains(5);</code></td>
+</tr>
+<tr>
+<td><code>int size()</code></td>
+<td><code>int size = deque.size();</code></td>
+<td>返回双端队列的元素数量。</td>
+<td><code>int size = deque.size();</code></td>
+</tr>
+<tr>
+<td><code>boolean isEmpty()</code></td>
+<td><code>boolean empty = deque.isEmpty();</code></td>
+<td>检查双端队列是否为空。</td>
+<td><code>boolean empty = deque.isEmpty();</code></td>
+</tr>
+<tr>
+<td><code>public Iterator iterator()</code></td>
+<td><code>Iterator iterator = deque.iterator();</code></td>
+<td>返回一个迭代器，用于遍历双端队列中的元素。</td>
+<td><code>Iterator iterator = deque.iterator();</code></td>
+</tr>
+<tr>
+<td><code>public Iterator descendingIterator()</code></td>
+<td><code>Iterator iterator = deque.descendingIterator();</code></td>
+<td>返回一个逆向迭代器，用于逆序遍历双端队列中的元素。</td>
+<td><code>Iterator iterator = deque.descendingIterator();</code></td>
+</tr>
+<tr>
+<td><code>public Object[] toArray()</code></td>
+<td><code>Object[] array = deque.toArray();</code></td>
+<td>将双端队列中的元素转换为一个对象数组。</td>
+<td><code>Object[] array = deque.toArray();</code></td>
+</tr>
+<tr>
+<td><code>public T[] toArray(T[] a)</code></td>
+<td><code>Integer[] array = deque.toArray(new Integer[0]);</code></td>
+<td>将双端队列中的元素转换为指定类型的数组。</td>
+<td><code>Integer[] array = deque.toArray(new Integer[0]);</code></td>
+</tr>
+<tr>
+<td><code>public void clear()</code></td>
+<td><code>deque.clear();</code></td>
+<td>清空双端队列中的所有元素。</td>
+<td><code>deque.clear();</code></td>
+</tr>
+<tr>
+<td><code>public ArrayDeque clone()</code></td>
+<td><code>ArrayDeque cloneDeque = deque.clone();</code></td>
+<td>创建并返回双端队列的浅拷贝副本。</td>
+<td><code>ArrayDeque cloneDeque = deque.clone();</code></td>
+</tr>
+</tbody></table>
+<p><code>Deque</code>接口有多个实现类，常用的是<code>ArrayDeque</code>和<code>LinkedList</code>。<code>ArrayDeque</code>基于可调整大小的数组实现，具有常数时间复杂度的大多数操作。<code>LinkedList</code>基于双向链表实现，<strong>插入和删除操作较快，但访问操作相对较慢。</strong></p>
+<p>使用<code>Deque</code>接口及其实现类，可以实现双端队列的功能，并且能够高效地在队列的两端进行元素操作，例如将元素添加到开头或末尾、获取开头或末尾的元素，以及删除开头或末尾的元素等。</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2023-06-07 10:03:31" itemprop="dateModified" datetime="2023-06-07T10:03:31+08:00">2023-06-07</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Valentine <i class="ic i-at"><em>@</em></i>Valentine
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://example.com/2023/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/2%E3%80%81Deque/" title="2、Deque">http://example.com/2023/06/07/数据结构/java中的数据结构实现类/2、Deque/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/1%E3%80%81%E6%A0%88Stack/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;image.baidu.com&#x2F;search&#x2F;down?url&#x3D;https:&#x2F;&#x2F;lz.sinaimg.cn&#x2F;large&#x2F;6833939bly1gipetlbztpj20zk0m84qp.jpg" title="1、Stack">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> java中的数据结构实现类</span>
+  <h3>1、Stack</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Deque%EF%BC%88%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">Deque（双端队列）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">实现类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayDeque"><span class="toc-number">1.2.</span> <span class="toc-text">ArrayDeque</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8ArrayDeque-%E8%BF%98%E6%98%AF%E7%94%A8-LinkedList%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">用ArrayDeque 还是用 LinkedList？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Deque%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">Deque方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="toc-number">2.0.0.1.</span> <span class="toc-text">添加元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0"><span class="toc-number">2.0.0.2.</span> <span class="toc-text">获取元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-number">2.0.0.3.</span> <span class="toc-text">删除元素</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E6%93%8D%E4%BD%9C"><span class="toc-number">2.0.0.4.</span> <span class="toc-text">队列操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%88%E6%93%8D%E4%BD%9C"><span class="toc-number">2.0.0.5.</span> <span class="toc-text">栈操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95"><span class="toc-number">2.0.0.6.</span> <span class="toc-text">其他方法</span></a></li></ol></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/1%E3%80%81%E6%A0%88Stack/" rel="bookmark" title="1、Stack">1、Stack</a></li><li class="active"><a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/2%E3%80%81Deque/" rel="bookmark" title="2、Deque">2、Deque</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Valentine"
+      data-src="http://q1.qlogo.cn/g?b=qq&nk=26716296&s=4"
+  >
+  <p class="name" itemprop="name">Valentine</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">5</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tLzI2NzE2Mjk2" title="https:&#x2F;&#x2F;github.com&#x2F;26716296"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTIwNTc4MjIxNjk=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;2057822169"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOjI2NzE2Mjk2QHFxLmNvbQ==" title="mailto:26716296@qq.com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item qq" data-url="aHR0cHM6Ly9xbS5xcS5jb20vY2dpLWJpbi9xbS9xcj9rPTRGQVJ0ZzhfQmJXeHNKSUhxUlZGVWtpT2lfbVprS0VTJm5vdmVyaWZ5PTAmcGVyc29uYWxfcXJjb2RlX3NvdXJjZT0z" title="https:&#x2F;&#x2F;qm.qq.com&#x2F;cgi-bin&#x2F;qm&#x2F;qr?k&#x3D;4FARtg8_BbWxsJIHqRVFUkiOi_mZkKES&amp;noverify&#x3D;0&amp;personal_qrcode_source&#x3D;3"><i class="ic i-qq"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-link"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2023/06/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/2%E3%80%81%E7%89%A9%E7%90%86%E5%B1%82/" title="2、物理层">2、物理层</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="In 数据结构">数据结构</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/" title="In java中的数据结构实现类">java中的数据结构实现类</a>
+</div>
+
+    <span><a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/2%E3%80%81Deque/" title="2、Deque">2、Deque</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2023/06/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/3%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" title="3、数据链路层">3、数据链路层</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="In 数据结构">数据结构</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/" title="In java中的数据结构实现类">java中的数据结构实现类</a>
+</div>
+
+    <span><a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/1%E3%80%81%E6%A0%88Stack/" title="1、Stack">1、Stack</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2023/06/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/1%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/" title="1、计算机网络概念与体系结构">1、计算机网络概念与体系结构</a></span>
+  </li>
+
+  </ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Valentine @ Hello World</span>
+  </div>
+<div class="timing">
+  <span id="RunTime"></span>
+  <script>
+    var BootDate = new Date("2021/10/24 23:00:00"); 
+    function ShowRunTime(id) {
+      var NowDate = new Date();
+      var RunDateM = parseInt(NowDate - BootDate);
+      var RunDays = Math.floor(RunDateM/(24*3600*1000));
+      var RunHours = Math.floor(RunDateM%(24*3600*1000)/(3600*1000));
+      var RunMinutes = Math.floor(RunDateM%(24*3600*1000)%(3600*1000)/(60*1000));
+      var RunSeconds = Math.round(RunDateM%(24*3600*1000)%(3600*1000)%(60*1000)/1000);
+      var RunTime = RunDays + " 天 " + RunHours + " 时 " + RunMinutes + " 分 " + RunSeconds + " 秒";
+      document.getElementById(id).innerHTML = "本站已运行 " + RunTime;
+    }
+    setInterval("ShowRunTime('RunTime')", 1000);
+  </script>
+</div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/06/07/数据结构/java中的数据结构实现类/2、Deque/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
