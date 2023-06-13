@@ -1,0 +1,648 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+<meta name="msvalidate.01" content="9EBC90696DDD6D995901F1695D5C0A38" />
+<meta name="baidu-site-verification" content="codeva-kMcy1s0JgQ" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Valentine" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Valentine" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Valentine" href="http://example.com/feed.json" />
+<meta name="Keywords" Content="">
+<meta name="Description" Content="">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://example.com/2023/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E9%98%9F%E5%88%97/[225]%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/">
+
+
+
+  <title>Valentine</title>
+<meta name="generator" content="Hexo 6.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">225、用队列实现栈
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2023-06-13 22:01:43">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-06-13T22:01:43+08:00">2023-06-13</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Valentine</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gicis3attqj20zk0m8k7l.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1giclx29mstj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://image.baidu.com/search/down?url=https://lz.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
+        </ul>
+      </div>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    </header>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="item" rel="index" title="In 数据结构"><span itemprop="name">数据结构</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/" itemprop="item" rel="index" title="In 数据结构习题整理"><span itemprop="name">数据结构习题整理</span></a>
+<meta itemprop="position" content="2" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E9%93%BE%E8%A1%A8/" itemprop="item" rel="index" title="In 链表"><span itemprop="name">链表</span></a>
+<meta itemprop="position" content="3" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E9%98%9F%E5%88%97/[225]%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/">
+
+<span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="https://img1.imgtp.com/2023/06/10/8zmhsC9c.png">
+  <meta itemprop="name" content="Valentine">
+  <meta itemprop="description" content=", ">
+</span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Valentine">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p align="center">225、用队列实现栈</p>
+
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>请你仅使用两个队列实现一个后入先出（LIFO）的栈，并支持普通栈的全部四种操作（<code>push</code>、<code>top</code>、<code>pop</code> 和 <code>empty</code>）。</p>
+
+<p>实现 <code>MyStack</code> 类：</p>
+
+<ul> 
+ <li><code>void push(int x)</code> 将元素 x 压入栈顶。</li> 
+ <li><code>int pop()</code> 移除并返回栈顶元素。</li> 
+ <li><code>int top()</code> 返回栈顶元素。</li> 
+ <li><code>boolean empty()</code> 如果栈是空的，返回 <code>true</code> ；否则，返回 <code>false</code> 。</li> 
+</ul>
+
+<p>&nbsp;</p>
+
+<p><strong>注意：</strong></p>
+
+<ul> 
+ <li>你只能使用队列的基本操作 —— 也就是&nbsp;<code>push to back</code>、<code>peek/pop from front</code>、<code>size</code> 和&nbsp;<code>is empty</code>&nbsp;这些操作。</li> 
+ <li>你所使用的语言也许不支持队列。&nbsp;你可以使用 list （列表）或者 deque（双端队列）来模拟一个队列&nbsp;, 只要是标准的队列操作即可。</li> 
+</ul>
+
+<p>&nbsp;</p>
+
+<p><strong>示例：</strong></p>
+
+<pre>
+<strong>输入：</strong>
+["MyStack", "push", "push", "top", "pop", "empty"]
+[[], [1], [2], [], [], []]
+<strong>输出：</strong>
+[null, null, null, 2, 2, false]
+
+<strong>解释：</strong>
+MyStack myStack = new MyStack();
+myStack.push(1);
+myStack.push(2);
+myStack.top(); // 返回 2
+myStack.pop(); // 返回 2
+myStack.empty(); // 返回 False
+</pre>
+
+<p>&nbsp;</p>
+
+<p><strong>提示：</strong></p>
+
+<ul> 
+ <li><code>1 &lt;= x &lt;= 9</code></li> 
+ <li>最多调用<code>100</code> 次 <code>push</code>、<code>pop</code>、<code>top</code> 和 <code>empty</code></li> 
+ <li>每次调用 <code>pop</code> 和 <code>top</code> 都保证栈不为空</li> 
+</ul>
+
+<p>&nbsp;</p>
+
+<p><strong>进阶：</strong>你能否仅用一个队列来实现栈。</p>
+
+<div><div>Related Topics</div><div><li>栈</li><li>设计</li><li>队列</li></div></div><br><div><li>👍 725</li><li>👎 0</li></div>
+
+<h1 id="我的笔记"><a href="#我的笔记" class="headerlink" title="我的笔记"></a>我的笔记</h1><h2 id="java中的队列实现类"><a href="#java中的队列实现类" class="headerlink" title="java中的队列实现类"></a>java中的队列实现类</h2><p><code>ArrayDeque类</code></p>
+<h3 id="队列操作"><a href="#队列操作" class="headerlink" title="队列操作"></a>队列操作</h3><table>
+<thead>
+<tr>
+<th align="center">方法名称</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">public boolean add(E e)</td>
+<td align="center">在队列尾部添加一个元素</td>
+</tr>
+<tr>
+<td align="center">public boolean offer(E e)</td>
+<td align="center">在队列尾部添加一个元素，并返回是否成功</td>
+</tr>
+<tr>
+<td align="center">public E remove()</td>
+<td align="center">删除队列中第一个元素，并返回该元素的值，如果元素为null，将抛出异常(其实底层调用的是removeFirst())</td>
+</tr>
+<tr>
+<td align="center">public E poll()</td>
+<td align="center">删除队列中第一个元素，并返回该元素的值,如果元素为null，将返回null(其实调用的是pollFirst())</td>
+</tr>
+<tr>
+<td align="center">public E element()</td>
+<td align="center">获取第一个元素，如果没有将抛出异常</td>
+</tr>
+<tr>
+<td align="center">public E peek()</td>
+<td align="center">获取第一个元素，如果没有返回null</td>
+</tr>
+</tbody></table>
+<h2 id="我的思路"><a href="#我的思路" class="headerlink" title="我的思路"></a>我的思路</h2><ol>
+<li>使用两个队列A和B</li>
+<li>加入（push）时，向A中尾加</li>
+<li>取出（pop）时，先将A中除最后一个元素，其余的所有元素依次尾加到B队列，弹出A剩下的唯一元素</li>
+<li>再把B中元素重新尾加到A中</li>
+<li>如果是peek的话，不弹出A中最后一个元素，取到值之后直接加到B队列中，再重复第四步</li>
+<li>判断empty直接使用队列自带方法</li>
+</ol>
+<h2 id="关于拷贝队列："><a href="#关于拷贝队列：" class="headerlink" title="关于拷贝队列："></a>关于拷贝队列：</h2><p><strong>记住：有一个方法： addAll（）</strong></p>
+<p>不要再使用循环了！！！！！！！！！！</p>
+<h2 id="我的思路实现"><a href="#我的思路实现" class="headerlink" title="我的思路实现"></a>我的思路实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyStack</span> &#123;</span><br><span class="line"></span><br><span class="line">    Deque&lt;Integer&gt; queue_A;</span><br><span class="line">    Deque&lt;Integer&gt; queue_B;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyStack</span><span class="params">()</span> &#123;</span><br><span class="line">        queue_A = <span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;&gt;();</span><br><span class="line">        queue_B = <span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">        queue_A.offer(x);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">pop</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">int</span> n ;</span><br><span class="line">        n = queue_A.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i ++)&#123;</span><br><span class="line">            queue_B.add(queue_A.poll());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> queue_A.poll();</span><br><span class="line">        <span class="keyword">while</span>(!queue_B.isEmpty())&#123;</span><br><span class="line">            queue_A.add(queue_B.poll());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">top</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(queue_A.isEmpty())&#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> queue_A.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i ++)&#123;</span><br><span class="line">            queue_B.add(queue_A.poll());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> queue_A.peek();</span><br><span class="line">        queue_B.add(queue_A.poll());</span><br><span class="line">        <span class="keyword">while</span>(!queue_B.isEmpty())&#123;</span><br><span class="line">            queue_A.add(queue_B.poll());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">empty</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> queue_A.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="别人单队列实现"><a href="#别人单队列实现" class="headerlink" title="别人单队列实现"></a>别人单队列实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyStack</span> &#123;</span><br><span class="line">    Queue queue;</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">MyStack</span><span class="params">()</span> &#123;</span><br><span class="line">        queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Push element x onto stack. */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">        <span class="comment">/* 每加入一个元素，就让队列中的头先出来再进去确保新加入的元素始终放在在队列的头</span></span><br><span class="line"><span class="comment">        * */</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> queue.size();</span><br><span class="line">        queue.offer(x);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">            queue.offer(queue.poll());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Removes the element on top of the stack and returns that element. */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">pop</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> queue.poll();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Get the top element. */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">top</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> queue.peek();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/** Returns whether the stack is empty. */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">empty</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> queue.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2023-06-13 22:02:43" itemprop="dateModified" datetime="2023-06-13T22:02:43+08:00">2023-06-13</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Valentine <i class="ic i-at"><em>@</em></i>Valentine
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://example.com/2023/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E9%98%9F%E5%88%97/[225]%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/" title="225、用队列实现栈">http://example.com/2023/06/13/数据结构/数据结构习题整理/队列/[225]用队列实现栈/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E6%A0%88/%5B844%5D%E6%AF%94%E8%BE%83%E5%90%AB%E9%80%80%E6%A0%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;image.baidu.com&#x2F;search&#x2F;down?url&#x3D;https:&#x2F;&#x2F;lz.sinaimg.cn&#x2F;large&#x2F;6833939bly1giclhpw3lwj20zk0m8gvw.jpg" title="844、比较含退格字符串">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 栈</span>
+  <h3>844、比较含退格字符串</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E7%AC%94%E8%AE%B0"><span class="toc-number">2.</span> <span class="toc-text">我的笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E4%B8%AD%E7%9A%84%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="toc-number">2.1.</span> <span class="toc-text">java中的队列实现类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E6%93%8D%E4%BD%9C"><span class="toc-number">2.1.1.</span> <span class="toc-text">队列操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="toc-number">2.2.</span> <span class="toc-text">我的思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E6%8B%B7%E8%B4%9D%E9%98%9F%E5%88%97%EF%BC%9A"><span class="toc-number">2.3.</span> <span class="toc-text">关于拷贝队列：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%B7%AF%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.4.</span> <span class="toc-text">我的思路实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%AB%E4%BA%BA%E5%8D%95%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.5.</span> <span class="toc-text">别人单队列实现</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2023/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E9%93%BE%E8%A1%A8/%5B206%5D%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/" rel="bookmark" title="206、反转链表">206、反转链表</a></li><li class="active"><a href="/2023/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E9%98%9F%E5%88%97/%5B225%5D%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/" rel="bookmark" title="225、用队列实现栈">225、用队列实现栈</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Valentine"
+      data-src="https://img1.imgtp.com/2023/06/10/8zmhsC9c.png"
+  >
+  <p class="name" itemprop="name">Valentine</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">14</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">8</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tLzI2NzE2Mjk2" title="https:&#x2F;&#x2F;github.com&#x2F;26716296"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTIwNTc4MjIxNjk=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;2057822169"><i class="ic i-cloud-music"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOjI1NjE5OTM0ODZAcXEuY29t" title="mailto:2561993486@qq.com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item qq" data-url="aHR0cHM6Ly9xbS5xcS5jb20vY2dpLWJpbi9xbS9xcj9rPTRGQVJ0ZzhfQmJXeHNKSUhxUlZGVWtpT2lfbVprS0VTJm5vdmVyaWZ5PTAmcGVyc29uYWxfcXJjb2RlX3NvdXJjZT0z" title="https:&#x2F;&#x2F;qm.qq.com&#x2F;cgi-bin&#x2F;qm&#x2F;qr?k&#x3D;4FARtg8_BbWxsJIHqRVFUkiOi_mZkKES&amp;noverify&#x3D;0&amp;personal_qrcode_source&#x3D;3"><i class="ic i-qq"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-link"></i>友链</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>Posts</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>friends</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="In 数据结构">数据结构</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/" title="In 数据结构习题整理">数据结构习题整理</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E6%A0%88/" title="In 栈">栈</a>
+</div>
+
+    <span><a href="/2023/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E6%A0%88/%5B844%5D%E6%AF%94%E8%BE%83%E5%90%AB%E9%80%80%E6%A0%BC%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="844、比较含退格字符串">844、比较含退格字符串</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2023/06/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/5%E3%80%81%E4%BC%A0%E8%BE%93%E5%B1%82/" title="5、传输层">5、传输层</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="In 数据结构">数据结构</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/" title="In 数据结构笔记">数据结构笔记</a>
+</div>
+
+    <span><a href="/2023/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%94%E8%AE%B0/9%E3%80%81%E9%98%9F%E5%88%97%EF%BC%9A%E9%98%9F%E5%88%97%E5%9C%A8%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%AD%89%E6%9C%89%E9%99%90%E8%B5%84%E6%BA%90%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" title="9、队列：队列在线程池等有限资源中的应用">9、队列：队列在线程池等有限资源中的应用</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="In 数据结构">数据结构</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/" title="In 数据结构习题整理">数据结构习题整理</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E6%A0%88/" title="In 栈">栈</a>
+</div>
+
+    <span><a href="/2023/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E6%A0%88/%5B682%5D%E6%A3%92%E7%90%83%E6%AF%94%E8%B5%9B/" title="682、棒球比赛">682、棒球比赛</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="In 数据结构">数据结构</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/" title="In 数据结构习题整理">数据结构习题整理</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E6%A0%88/" title="In 栈">栈</a>
+</div>
+
+    <span><a href="/2023/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E6%A0%88/%5B20%5D%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" title="20、有效的括号">20、有效的括号</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="In 数据结构">数据结构</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/" title="In 数据结构习题整理">数据结构习题整理</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E6%A0%88/" title="In 栈">栈</a>
+</div>
+
+    <span><a href="/2023/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E6%A0%88/%5B232%5D%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/" title="232、用栈实现队列">232、用栈实现队列</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2023/06/03/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/1%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5/" title="1、计算机网络概念与体系结构">1、计算机网络概念与体系结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%BD%91%E7%BB%9C%E5%B1%82/" title="In 网络层">网络层</a>
+</div>
+
+    <span><a href="/2023/06/07/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/4%E3%80%81%E7%BD%91%E7%BB%9C%E5%B1%82/" title="4、网络层">4、网络层</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="In 数据结构">数据结构</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/" title="In java中的数据结构实现类">java中的数据结构实现类</a>
+</div>
+
+    <span><a href="/2023/06/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/java%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E7%8E%B0%E7%B1%BB/1%E3%80%81%E6%A0%88Stack/" title="1、Stack">1、Stack</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" title="In 数据结构">数据结构</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/" title="In 数据结构习题整理">数据结构习题整理</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E9%93%BE%E8%A1%A8/" title="In 链表">链表</a>
+</div>
+
+    <span><a href="/2023/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%A0%E9%A2%98%E6%95%B4%E7%90%86/%E9%98%9F%E5%88%97/%5B225%5D%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88/" title="225、用队列实现栈">225、用队列实现栈</a></span>
+  </li>
+
+  </ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Valentine @ Valentine</span>
+  </div>
+<div class="timing">
+  <span id="RunTime"></span>
+  <script>
+    var BootDate = new Date("2021/10/24 23:00:00"); 
+    function ShowRunTime(id) {
+      var NowDate = new Date();
+      var RunDateM = parseInt(NowDate - BootDate);
+      var RunDays = Math.floor(RunDateM/(24*3600*1000));
+      var RunHours = Math.floor(RunDateM%(24*3600*1000)/(3600*1000));
+      var RunMinutes = Math.floor(RunDateM%(24*3600*1000)%(3600*1000)/(60*1000));
+      var RunSeconds = Math.round(RunDateM%(24*3600*1000)%(3600*1000)%(60*1000)/1000);
+      var RunTime = RunDays + " 天 " + RunHours + " 时 " + RunMinutes + " 分 " + RunSeconds + " 秒";
+      document.getElementById(id).innerHTML = "本站已运行 " + RunTime;
+    }
+    setInterval("ShowRunTime('RunTime')", 1000);
+  </script>
+</div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/06/13/数据结构/数据结构习题整理/队列/[225]用队列实现栈/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
